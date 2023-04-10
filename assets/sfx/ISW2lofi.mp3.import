@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ISW2lofi.mp3-264b14b0f786d2dff9ab55260dd77616.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/ISW2lofi.mp3"
+dest_files=[ "res://.import/ISW2lofi.mp3-264b14b0f786d2dff9ab55260dd77616.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

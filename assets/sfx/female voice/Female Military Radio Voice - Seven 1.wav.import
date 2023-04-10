@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Female Military Radio Voice - Seven 1.wav-26891d6b1d4ef3ef1b5dd84e873fd33a.sample"
+
+[deps]
+
+source_file="res://assets/sfx/female voice/Female Military Radio Voice - Seven 1.wav"
+dest_files=[ "res://.import/Female Military Radio Voice - Seven 1.wav-26891d6b1d4ef3ef1b5dd84e873fd33a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

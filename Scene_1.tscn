@@ -1,32 +1,42 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scene_1.gd" type="Script" id=1]
-[ext_resource path="res://player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://RayCast2D.gd" type="Script" id=3]
+[ext_resource path="res://assets/ships/e1 strike carrier.png" type="Texture" id=2]
+[ext_resource path="res://assets/ships/asteroid1.png" type="Texture" id=3]
+[ext_resource path="res://Player.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 70, 31 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 95, 33.5 )
 
 [node name="Scene_1" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="player" parent="." instance=ExtResource( 2 )]
-margin_left = 639.0
-margin_top = 297.0
-margin_right = 703.0
-margin_bottom = 361.0
+[node name="Object" type="StaticBody2D" parent="."]
+position = Vector2( 693, 246 )
 
-[node name="obstacle" parent="." instance=ExtResource( 2 )]
-margin_left = 783.0
-margin_top = 293.0
-margin_right = 847.0
-margin_bottom = 357.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Object"]
+position = Vector2( -6, -7 )
+shape = SubResource( 1 )
 
-[node name="enemy" parent="." instance=ExtResource( 2 )]
-margin_left = 923.0
-margin_top = 292.0
-margin_right = 987.0
-margin_bottom = 356.0
+[node name="Sprite" type="Sprite" parent="Object"]
+rotation = 1.57476
+texture = ExtResource( 3 )
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2( 673, 330 )
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 142, 246 )
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( 14, -3.5 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Player"]
+texture = ExtResource( 2 )
+
+[node name="RayCast2D" type="RayCast2D" parent="Player"]
+position = Vector2( 6, 1 )
 enabled = true
-cast_to = Vector2( 600, 0 )
-script = ExtResource( 3 )
+cast_to = Vector2( 362, 1 )
