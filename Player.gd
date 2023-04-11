@@ -9,8 +9,6 @@ func _physics_process(delta):
 	)
 	
 	if Input.action_press("ui_select") and $RayCast2D.is_colliding():
-		print("object recognized")	
-	
+		print("object recognized")
 	
 	move_and_slide(vel*speed)
-	
