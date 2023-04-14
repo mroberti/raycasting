@@ -8,6 +8,22 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Reference",
+"class": "Player",
+"language": "GDScript",
+"path": "res://common/Player/Player.gd"
+}, {
+"base": "Reference",
+"class": "RigidPlayer2D",
+"language": "GDScript",
+"path": "res://common/Player/RigidPlayer2D.gd"
+} ]
+_global_script_class_icons={
+"Player": "",
+"RigidPlayer2D": ""
+}
+
 [application]
 
 config/name="Chatgpt Testing"

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scene_1.gd" type="Script" id=1]
 [ext_resource path="res://assets/ships/e1 strike carrier.png" type="Texture" id=2]
 [ext_resource path="res://assets/ships/asteroid1.png" type="Texture" id=3]
 [ext_resource path="res://Player.gd" type="Script" id=4]
+[ext_resource path="res://common/Player/Player.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 70, 31 )
@@ -40,3 +41,6 @@ texture = ExtResource( 2 )
 position = Vector2( 6, 1 )
 enabled = true
 cast_to = Vector2( 362, 1 )
+
+[node name="Player2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 232, 139 )
