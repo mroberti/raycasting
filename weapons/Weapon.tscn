@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://common/VFX/LaserBeam2D/LaserBeam2D.tscn" type="PackedScene" id=1]
+[ext_resource path="res://weapons/LaserSightWeapon.gd" type="Script" id=2]
+
+[node name="Weapon" type="Node2D"]
+show_behind_parent = true
+script = ExtResource( 2 )
+
+[node name="LaserBeam2D" parent="." instance=ExtResource( 1 )]
+rotation = -1.5708
