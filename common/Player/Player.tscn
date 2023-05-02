@@ -61,3 +61,5 @@ shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/blink = SubResource( 2 )
+
+[node name="MovementTween" type="Tween" parent="."]
