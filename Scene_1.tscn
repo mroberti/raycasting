@@ -23,5 +23,6 @@ rotation = 1.57476
 texture = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 693, 246 )
 
 [node name="Weapon" parent="Player" instance=ExtResource( 6 )]

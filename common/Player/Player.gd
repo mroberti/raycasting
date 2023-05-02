@@ -34,7 +34,7 @@ func _ready():
 
 	# Set the timer's properties
 	timer.wait_time = 2.0 # 5 second delay
-	timer.one_shot = true # run only once
+	timer.one_shot = false # run only once
 
 	# Connect the timer to a function
 	timer.connect("timeout", self, "move_forward")
@@ -44,10 +44,11 @@ func _ready():
 
 func move_forward():
 	if(moving==false):
-		moving=true
-		var tempRotation = $Sprite.rotation-90
-		var speed_x = speed * cos (tempRotation)
-		var speed_y = speed * sin (tempRotation)
+		# moving=true
+		var tempRotation = _sprite.rotation
+		var speed_x = speed * cos (tempRotation-deg2rad(90))
+		var speed_y = speed * sin (tempRotation-deg2rad(90))
+		print_debug("Rotation: "+str(_sprite.rotation_degrees))
 		var tween = get_node("MovementTween")
 		tween.interpolate_property(self, "position",
 				Vector2(position.x, position.y), Vector2(position.x + speed_x, position.y+speed_y), tween_delay,
@@ -92,14 +93,6 @@ func _physics_process(_delta: float) -> void:
 	_sprite.rotation = _velocity.angle() + PI / 2
 	if _weapon:
 		_weapon.rotation = _sprite.rotation
-
-	# Updating flames
-	var speed_rate := _velocity.length() / speed
-
-	_flame_main.scale = Vector2.ONE * speed_rate
-	_flame_left.scale = Vector2.ONE * speed_rate * 0.35
-	_flame_right.scale = Vector2.ONE * speed_rate * 0.35
-
 
 func take_damage() -> void:
 	start_blink(false)
